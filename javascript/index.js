@@ -10,7 +10,30 @@ function updateTime() {
       lostAngelesTimeElement.innerHTML = losAngelesTime.format(
         "h:mm:ss [<small>]A[</small>]"
       );
-    }
+  }
+  let londonElement = document.querySelector("#london");
+  if (losAngelesElement) {
+    let londonDateElement = londonElement.querySelector(".date");
+    let londonTimeElement = londonElement.querySelector(".time");
+    let londonTime = moment().tz("Europe/London");
+
+    londonDateElement.innerHTML = londonTime.format("MMMM	Do YYYY");
+    londonTimeElement.innerHTML = londonTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+  }
+  
+  let johannesburgElement = document.querySelector("#joburg");
+  if (johannesburgElement) {
+    let johannesburgDateElement = johannesburgElement.querySelector(".date");
+    let johannesburgTimeElement = johannesburgElement.querySelector(".time");
+    let johannesburgTime = moment().tz("Africa/Johannesburg");
+
+    johannesburgDateElement.innerHTML = johannesburgTime.format("MMMM	Do YYYY");
+    johannesburgTimeElement.innerHTML = johannesburgTime.format(
+      "h:mm:ss [<small>]A[</small>]"
+    );
+}
   
     // Paris
     let parisElement = document.querySelector("#paris");
